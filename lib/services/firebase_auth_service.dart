@@ -85,6 +85,7 @@ class FirebaseAuthService{
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
+  //
 
   //Déconnexion de l'utilisateur
   Future<void> signOut() async {
