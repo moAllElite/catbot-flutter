@@ -1,5 +1,6 @@
 # catbot
-
+# HELPERS
+https://stackoverflow.com/questions/67617502/what-are-the-error-codes-for-flutter-firebase-auth-exception
 A new Flutter project.
 
 ## Getting Started
