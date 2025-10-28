@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
          '/': (context) => const LoginView(),
-        '/login':(context) => const ChatView(title: 'CatBot')
+        '/login':(context) => const ChatView(title: 'CatBot'),
       },
     );
   }
@@ -33,4 +33,3 @@ class MyApp extends StatelessWidget {
 
 
 
-       
