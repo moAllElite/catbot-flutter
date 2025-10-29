@@ -1,6 +1,4 @@
 
-
-import 'package:catbot/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/custom_color.dart';

@@ -1,4 +1,4 @@
-import 'package:catbot/utils/constants.dart';
+
 import 'package:catbot/utils/custom_color.dart';
 import 'package:catbot/views/chat_view.dart';
 import 'package:catbot/views/login_view.dart';
