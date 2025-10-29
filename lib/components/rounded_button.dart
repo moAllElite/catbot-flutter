@@ -3,6 +3,8 @@
 import 'package:catbot/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/custom_color.dart';
+
 class RoundedButton extends StatelessWidget{
   final  Function action;
   final String title;
@@ -13,9 +15,13 @@ class RoundedButton extends StatelessWidget{
   final double? iconSize;
   final Color? iconColors;
 
-  const RoundedButton({super.key,
+  final TextStyle? textStyle;
+
+  const RoundedButton({
+    super.key,
     required this.action,
     required this.title,
+    this.textStyle,
     this.buttonSize,
     this.radius,
     this.iconSize,
@@ -52,7 +58,7 @@ class RoundedButton extends StatelessWidget{
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style:  Theme.of(context).textTheme.titleMedium,
+            style: textStyle ??  Theme.of(context).textTheme.titleMedium,
           ),
         ),
         icon: Icon(

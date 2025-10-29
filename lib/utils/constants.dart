@@ -1,21 +1,37 @@
 import 'package:flutter/material.dart';
 
-class AppColor {
-   // Palette principale
-   Color primary = Color(0xFF2D1E70); // violet profond
-   Color secondary = Color(0xFFF72585); // orange vif
-   Color accent = Color(0xFF00C2A8); // turquoise
+import 'custom_color.dart';
 
-   // Palette de soutien
-   Color lightBackground = Color(0xFFF9F9FB); // fond clair
-   Color darkBackground = Color(0xFF121212); // fond sombre
-   Color textPrimary = Color(0xFF1E1E1E); // texte principal
-   Color textSecondary = Color(0xFF6E6E73); // texte secondaire
 
-   // Couleurs de feedback
-   Color success = Color(0xFF00B86B); // vert succès
-   Color warning = Color(0xFFFFD166); // jaune attention
-   Color error = Color(0xFFE63946); // rouge erreur
+var sendButtonTextStyle = TextStyle(
+  color: appColor.lightBackground,
+  backgroundColor: appColor.primary,
+  fontSize: 18.0,
+);
 
-}
-AppColor appColor = AppColor();
+var kInputTextDecoration = InputDecoration(
+    labelText:'Enter your username',
+    contentPadding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
+    hintText:'Enter your username',
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(32.0),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+          color: appColor.success,width:1.0
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius:BorderRadius.circular(32.0),
+      borderSide: BorderSide(
+        color: appColor.primary,
+      )
+    ),
+);
+
+const  errorIcon = Icon(
+    Icons.report_problem_outlined,
+    color:Colors.red,
+    size:7.0
+);
+
