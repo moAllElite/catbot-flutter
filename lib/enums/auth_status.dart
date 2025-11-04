@@ -9,5 +9,6 @@ enum AuthStatus {
   providerAlreadyLinked,
   invalidCredential,
   credentialAlreadyInUse,
-
+  userSignedIn,
+  userSignOut
 }
