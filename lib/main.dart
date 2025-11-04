@@ -1,7 +1,6 @@
 
 import 'package:catbot/utils/custom_color.dart';
-import 'package:catbot/views/chat_view.dart';
-import 'package:catbot/views/login_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +13,13 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  //initialisation  de la connexion
+  Future<void> main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+
+    await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  }
 
   // This widget is the root of your application.
   @override
@@ -25,8 +31,7 @@ class MyApp extends StatelessWidget {
         primaryColor: appColor.primary,
       ),
       routes: {
-         '/': (context) => const LoginView(),
-        '/login':(context) => const ChatView(title: 'CatBot'),
+
       },
     );
   }

@@ -1,6 +1,6 @@
 //Vérifier l'état d'authentification actuel
 import 'dart:async';
-
+import 'package:catbot/exceptions/auth_handler_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -46,21 +46,9 @@ class UserService {
           .instance.currentUser?.linkWithCredential(credential);
       return userCredential;
     }on FirebaseAuthException catch(e) {
-      switch (e.code) {
-        case "provider-already-linked":
-          debugPrint("The provider has already been linked to the user.");
-          break;
-        case "invalid-credential":
-          debugPrint("The provider's credential is not valid.");
-          break;
-        case "credential-already-in-use":
-          debugPrint("The account corresponding to the credential already exists, "
-              "or is already linked to a Firebase User.");
-          break;
+      String message = AuthHandlerException.generateErrorMessage(e);
+      debugPrint(message);
       // See the API reference for the full list of error codes.
-        default:
-          debugPrint("Unknown error.");
-      }
     }
     return null;
   }
