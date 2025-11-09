@@ -1,10 +1,10 @@
 import 'package:catbot/components/rounded_button.dart';
 import 'package:catbot/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:signals/signals.dart';
 
 import '../components/custom_text_form_field.dart';
-import '../utils/custom_color.dart';
 import '../utils/text_field_controllers.dart';
 
 class LoginView extends StatefulWidget{
@@ -22,8 +22,10 @@ class LoginViewState extends State<LoginView>{
     double height =  MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomTextFormField(
               textController:  fieldControllers.userNameController,
@@ -35,29 +37,25 @@ class LoginViewState extends State<LoginView>{
             SizedBox(
               height: height / 10,
             ),
-            CustomTextFormField(
-              textController:  fieldControllers.passwordController,
-              title: 'Password',
-              inputDecoration: kInputTextDecoration.copyWith(
-                hint:  Text('Enter your password'),
-                prefixIcon: IconButton(
-                    onPressed: ()=> changePasswordVisibility(),
-                    icon: Icon(
-                        isVisible.value ? Icons.visibility : Icons.visibility_off
-                    )
-                )
+                CustomTextFormField(
+                textController:  fieldControllers.passwordController,
+                title: 'Password',
+                inputDecoration: kInputTextDecoration.copyWith(
+                  hintText:  'Enter your password',
+                  prefixIcon: IconButton(
+                      onPressed: ()=> changePasswordVisibility(),
+                      icon: Icon(
+                          isVisible.value ? Icons.visibility : Icons.visibility_off
+                      )
+                  )
+                ),
               ),
-            ),
             SizedBox(
               height: height / 10,
             ),
             RoundedButton(
-                action: ()=>{
-
-                },
+                action:  () => context.go('/chatbot'), //navigate to chatbot view
                 title: 'Login',
-                textStyle: sendButtonTextStyle,
-                iconColors: appColor.primary,
                 icon: Icons.arrow_circle_right_rounded
             )
           ],

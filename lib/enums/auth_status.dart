@@ -9,6 +9,7 @@ enum AuthStatus {
   providerAlreadyLinked,
   invalidCredential,
   credentialAlreadyInUse,
+  duplicateApp,
   userSignedIn,
   userSignOut
 }

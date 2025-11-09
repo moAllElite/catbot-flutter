@@ -26,7 +26,6 @@ class CustomTextFormField extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: textColor ?? appColor.textPrimary,
-          backgroundColor: backgroundColor ??appColor.lightBackground,
         ),
       ),
     );
